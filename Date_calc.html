@@ -14,25 +14,48 @@
             display: inline-block;
             border-radius: 8px;
         }
+        .div1 {
+            width: 300px;
+            height: 100px;
+            padding: 20px;
+        }
     </style>
 </head>
 
 <body>
-    <input class=btn1 type="button" value="Days after" onclick="daysAfter()">
-    <input class=btn1 type="button" value="Days before" onclick="daysBefore()">
-
+    <div class="div1">
+            <input class=btn1 type="button" value="Days after" onclick="daysAfter()">
+    </div>
+    
+    <div class="div1">
+            <input class=btn1 type="button" value="Days before" onclick="daysBefore()">
+    </div>
 
 
     <script>
         function daysAfter() {
             var curDate = new Date();
-            let days = prompt("Current date is"+curDate+"Input your days");
-            console.log (days);
-            console.log (curDate.getDate())
-            curDate.setDate(curDate.getDate() + days);
-            console.log (curDate);
+            // console.log (curDate.getDate())
+            let days = parseInt(prompt("Current date is: "+ curDate.toDateString()+"\n"+"Input days:"));
+            // console.log(days);
+            curDate.setDate(curDate.getDate()+days);
+            // console.log (curDate);
             alert(curDate.toDateString());
         }
+
+        function daysBefore() {
+            var curDate = new Date();
+            // console.log (curDate.getDate())
+            let days = parseInt(prompt("Current date is:"+curDate.toDateString()+"\n"+"Input days:"));
+            // console.log(days);
+            curDate.setDate(curDate.getDate()-days);
+            // console.log (curDate);
+            alert(curDate.toDateString());
+        }
+        // var temp = new Date();
+        // console.log (temp);
+        // temp.setDate(temp.getDate() + 12);
+        // console.log (temp);
     </script>
 </body>
 
